@@ -1,14 +1,18 @@
 
+version: 2
+jobs:
+  build:
+    docker:
+      - image:: circleci/python:3.6
+    steps:
+      - checkout
+      - run: |
+        source ./myvenv/bin/activate
+        pip install django
+        python manage.py runserver
+
 workflows:
   version: 2
-  jobs:
-    build:
-      docker:
-        - image: circleci/python:3.6
-      steps:
-        - checkout
-        - run: |
-          source ./myvenv/bin/activate
-          pip install django
-          python manage.py runserver
-          
+  build:
+    jobs:
+      - build
