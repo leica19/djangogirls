@@ -7,7 +7,7 @@ jobs:
     steps:
       - checkout
       - run: source ./myvenv/bin/activate
-      - run: sudo pip install django
+      - run: sudo pip install django dj_database_url
       - run: python manage.py runserver
 
 workflows:
