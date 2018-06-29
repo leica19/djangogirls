@@ -6,4 +6,7 @@ jobs:
       - image: circleci/python:3.6
     steps:
       - checkout
-      - run: python manage.py runserver
+      - run: |
+        source ./myvenv/bin/activate
+        pip install django
+        python manage.py runserver
