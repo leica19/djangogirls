@@ -7,6 +7,6 @@ $ pip install -r requirements.txt
 # run
 $ python manage.py runserver
 
-# interactive shell
+## interactive shell
 
 $ python manage.py shell
